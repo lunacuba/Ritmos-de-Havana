@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolução da Música Cubana - Ritmos, Cultura e Quiz Interativo</title>
+    <!-- Tailwind CSS CDN-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0d1117;
+            color: #f3f4f6;
+        }
+        
+        .font-serif-title {
+            font-family: 'Cinzel', serif;
+        }
+
+        .bg-cuban-pattern {
+            background-color: #121824;
+            background-image: radial-gradient(#d97706 0.75px, transparent 0.75px), radial-gradient(#dc2626 0.75px, #121824 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            background-opacity: 0.15;
+        }
+
+        .glass-card {
+            background: rgba(22, 27, 38, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .caribbean-gradient {
+            background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-cuban-pattern min-h-screen text-slate-200">
+
+    <!-- Header / Navigation -->
+    <nav class="sticky top-0 z-50 glass-card border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full caribbean-gradient flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        🇨🇺
+                    </div>
+                    <span class="font-serif-title text-xl font-bold tracking-wider text-amber-400">RITMO DE CUBA</span>
+                </div>
+                
+                <div class="hidden md:flex space-x-6 font-medium text-sm">
+                    <a href="#historia" class="hover:text-amber-400 transition-colors">História & Estilos</a>
+                    <a href="#artistas" class="hover:text-amber-400 transition-colors">Grandes Nomes</a>
+                    <a href="#cultura" class="hover:text-amber-400 transition-colors">Cultura e Instrumentos</a>
+                    <a href="#quiz" class="px-4 py-2 rounded-full caribbean-gradient text-white font-semibold hover:opacity-90 transition-opacity flex items-center gap-2 shadow-md">
+                        <i data-lucide="gamepad-2" class="w-4 h-4"></i> Quiz Desafio
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#historia" class="block py-2 text-slate-300 hover:text-amber-400">História & Estilos</a>
+            <a href="#artistas" class="block py-2 text-slate-300 hover:text-amber-400">Grandes Nomes</a>
+            <a href="#cultura" class="block py-2 text-slate-300 hover:text-amber-400">Cultura e Instrumentos</a>
+            <a href="#quiz" class="block py-2 text-amber-400 font-semibold">🎮 Quiz Interativo</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-amber-400 text-sm font-semibold mb-6 border border-amber-500/30">
+                <i data-lucide="music" class="w-4 h-4"></i> Uma Jornada Sonora no Caribe
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight font-serif-title mb-6 leading-tight">
+                A Evolução da <br>
+                <span class="gold-gradient-text">Música Cubana</span>
+            </h1>
+            <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 font-light mb-10 leading-relaxed">
+                Descubra a fusão vibrante de ritmos africanos e melodias espanholas que deram origem ao Son, Mambo, Cha-Cha-Cha, Salsa e Cubatón. Conheça as lendas, os instrumentos e teste seus conhecimentos!
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#historia" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2">
+                    <i data-lucide="compass" class="w-5 h-5"></i> Explorar História
+                </a>
+                <a href="#quiz" class="px-8 py-4 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-bold border border-slate-700 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="trophy" class="w-5 h-5 text-amber-400"></i> Ir para o Quiz
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-28 pb-20">
+
+        <!-- Timeline / História -->
+        <section id="historia" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif-title text-amber-400 mb-4">Linha do Tempo dos Ritmos</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Como Cuba se tornou o epicentro musical das Américas e transformou a cultura global.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: Rumba & Roots -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/80 text-red-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        S. XIX
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Rumba e Danzón</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Nascida nos bairros populares de Havana e Matanzas, a Rumba trouxe as percussões afros. O Danzón tornou-se a dança de salão elegante e nacional de Cuba.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Congas</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Clave</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Tradição Afro</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Son Cubano -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group border-amber-500/30">
+                    <div class="w-12 h-12 rounded-xl bg-amber-950/80 text-amber-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        1920s
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Son Cubano</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        A verdadeira alma da música cubana! Uniu o violão e lírica espanhola aos tambores africanos. O Son é a raiz fundamental do que mais tarde seria chamado de Salsa.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Tres Cubano</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Bongô</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Sextetos & Septetos</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Era de Ouro / Mambo -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-950/80 text-orange-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        1940s-50s
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Mambo & Cha-Cha-Chá</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Pérez Prado internacionalizou o Mambo com Big Bands enérgicas. Enrique Jorrín criou o Cha-Cha-Cha, um ritmo contagiante e mais acessível aos dançarinos.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Metais</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Big Bands</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Sucesso Mundial</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Salsa & Timba -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-red-950/80 text-red-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        1970s-90s
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Salsa & Timba</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        Enquanto a Salsa se consolidava em NY com a diáspora latina, Cuba revolucionava internamente com a Timba — uma versão mais rápida, virtuosa e influenciada pelo Funk e Jazz.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Irakere</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Los Van Van</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Salsa Cubana</span>
+                    </div>
+                </div>
+
+                <!-- Card 5: Buena Vista Social Club -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group border-amber-500/20">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-950/80 text-yellow-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        1996
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">O Renascimento Tradicional</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        O projeto Buena Vista Social Club reuniu mestres esquecidos da era dourada. O álbum vendeu milhões, ganhou Grammys e reintroduziu o Son acústico ao mundo inteiro.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Grammy</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Compay Segundo</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Omara Portuondo</span>
+                    </div>
+                </div>
+
+                <!-- Card 6: Cubatón e Contemporâneo -->
+                <div class="glass-card rounded-2xl p-6 hover:border-amber-500/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-purple-950/80 text-purple-400 flex items-center justify-center font-bold text-xl mb-4 group-hover:scale-110 transition-transform">
+                        Atual
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 text-white">Cubatón & Fusão Urbana</h3>
+                    <p class="text-slate-400 text-sm mb-4 leading-relaxed">
+                        A juventude cubana fundiu o Reggaeton porto-riquenho com clave e sotaque cubano (Cubatón). Artistas modernos também mesclam Afrobeat, Hip-Hop e Son tradicional.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Gente de Zona</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Cimafunk</span>
+                        <span class="px-2.5 py-1 rounded-md bg-slate-800 text-amber-300">Urban Music</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artistas e Lendas -->
+        <section id="artistas" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold font-serif-title text-amber-400 mb-4">Lendas & Cantores Emblemáticos</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Vozes inesquecíveis e instrumentistas virtuosos que moldaram a identidade cultural de Cuba.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Celia Cruz -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
+                    <div class="h-48 bg-slate-800 relative flex items-center justify-center text-slate-500 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-transparent to-transparent z-10"></div>
+                        <span class="text-6xl">👑</span>
+                    </div>
+                    <div class="p-6 relative z-20 -mt-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950">A Rainha da Salsa</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Celia Cruz</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Famosa por seu bordão "¡Azúcar!", foi a maior expoente mundial da música caribenha e uma força da natureza no palco.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Compay Segundo -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
+                    <div class="h-48 bg-slate-800 relative flex items-center justify-center text-slate-500 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-transparent to-transparent z-10"></div>
+                        <span class="text-6xl">🎸</span>
+                    </div>
+                    <div class="p-6 relative z-20 -mt-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950">Mestre do Armónico</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Compay Segundo</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Compositor do clássico "Chan Chan", viveu quase 100 anos levando o Son genuíno e seu humor charmoso ao redor do planeta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bebo & Chucho Valdés -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
+                    <div class="h-48 bg-slate-800 relative flex items-center justify-center text-slate-500 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-transparent to-transparent z-10"></div>
+                        <span class="text-6xl">🎹</span>
+                    </div>
+                    <div class="p-6 relative z-20 -mt-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950">Dinastia do Piano</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Bebo & Chucho Valdés</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Pai e filho revolucionaram o Latin Jazz. Bebo dominou os cassinos nos anos 50 e Chucho fundou o lendário grupo Irakere.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Omara Portuondo -->
+                <div class="glass-card rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform">
+                    <div class="h-48 bg-slate-800 relative flex items-center justify-center text-slate-500 overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#121824] via-transparent to-transparent z-10"></div>
+                        <span class="text-6xl">🌹</span>
+                    </div>
+                    <div class="p-6 relative z-20 -mt-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500 text-slate-950">Diva do Bolero</span>
+                        <h3 class="text-xl font-bold text-white mt-2">Omara Portuondo</h3>
+                        <p class="text-slate-400 text-sm mt-2">
+                            Conhecida como a "Noiva do Feeling", sua voz emotiva no romance e no bolero sensibiliza plateias há mais de 7 décadas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultura & Instrumentos -->
+        <section id="cultura" class="scroll-mt-24">
+            <div class="glass-card rounded-3xl p-8 md:p-12 border border-slate-800">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <span class="text-amber-400 text-sm font-semibold tracking-widest uppercase">Fundamentos do Ritmo</span>
+                        <h2 class="text-3xl md:text-4xl font-bold font-serif-title text-white mt-2 mb-6">A Clave & A Instrumentação Única</h2>
+                        <p class="text-slate-300 leading-relaxed mb-6">
+                            A base de quase toda a música cubana é o padrão rítmico conhecido como <strong>Clave</strong> (3-2 ou 2-3). É o esqueleto invisível que guia todos os músicos e dançarinos.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400 font-bold">
+                                    <i data-lucide="drum" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Tres Cubano</h4>
+                                    <p class="text-slate-400 text-sm">Violão de 3 pares de cordas duplas que dá a pulsação harmônica e rítmica (guajeo) ao Son.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400 font-bold">
+                                    <i data-lucide="disc" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Congas e Bongô</h4>
+                                    <p class="text-slate-400 text-sm">Tambores afrocubanos fundamentais para criar os polirritmos que convidam à dança improvisada.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 rounded-xl bg-amber-500/10 text-amber-400 font-bold">
+                                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white">Guiro e Maracas</h4>
+                                    <p class="text-slate-400 text-sm">Instrumentos idiofônicos herdados das tradições indígenas Taíno e africanas para texturas contínuas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/90 rounded-2xl p-6 border border-slate-800 text-center relative overflow-hidden">
+                        <div class="text-6xl mb-4">💃🕺</div>
+                        <h3 class="text-2xl font-bold text-amber-400 mb-2">A Dança: Casino e Rueda</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Em Cuba, música e dança são indissociáveis. O estilo "Casino" (a salsa cubana) é famoso pelas movimentações circulares e pela <em>Rueda de Casino</em>, onde vários casais dançam sincronizados trocando de par ao comando de um líder.
+                        </p>
+                        <div class="inline-block p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-300 font-medium">
+                            💡 Curiosidade: O termo "Salsa" foi popularizado no exterior, mas os cubanos preferem chamar de "Son", "Timba" ou "Casino"!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE GAMIFICAÇÃO / QUIZZ INTERATIVO -->
+        <section id="quiz" class="scroll-mt-24">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 text-amber-400 text-sm font-semibold border border-amber-500/30 mb-3">
+                    <i data-lucide="award" class="w-4 h-4"></i> Teste Seus Conhecimentos
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold font-serif-title text-white">Exploração Interativa: O Quiz da Ritmo de Cuba</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mt-2">Acerte as perguntas para subir de nível e provar que você é um verdadeiro conhecedor da cultura cubana!</p>
+            </div>
+
+            <!-- Quiz Main Container -->
+            <div class="max-w-3xl mx-auto glass-card rounded-3xl p-6 md:p-10 border border-amber-500/30 relative overflow-hidden shadow-2xl">
+                
+                <!-- Status Bar / Gamification Stats -->
+                <div class="flex items-center justify-between pb-6 mb-8 border-b border-slate-800 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="trophy" class="w-5 h-5 text-amber-400"></i>
+                        <span class="text-slate-400">Pontuação:</span>
+                        <span id="score-display" class="font-bold text-amber-400 text-lg">0</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="flame" class="w-5 h-5 text-orange-500"></i>
+                        <span class="text-slate-400">Nível:</span>
+                        <span id="level-badge" class="px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 font-bold text-xs border border-orange-500/30">
+                            Novato da Clave
+                        </span>
+                    </div>
+
+                    <div class="text-slate-400">
+                        <span id="current-q">1</span>/<span id="total-q">5</span>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="w-full bg-slate-800 h-2 rounded-full mb-8 overflow-hidden">
+                    <div id="progress-bar" class="caribbean-gradient h-full w-0 transition-all duration-300"></div>
+                </div>
+
+                <!-- Quiz Questions View -->
+                <div id="quiz-box">
+                    <h3 id="question-text" class="text-xl md:text-2xl font-bold text-white mb-6">
+                        Carregando pergunta...
+                    </h3>
+
+                    <div id="options-container" class="space-y-4">
+                        <!-- Options injected dynamically -->
+                    </div>
+
+                    <!-- Instant Feedback Box -->
+                    <div id="feedback-box" class="mt-6 p-4 rounded-xl hidden flex items-start gap-3">
+                        <i id="feedback-icon" data-lucide="check-circle" class="w-6 h-6 shrink-0 mt-0.5"></i>
+                        <div>
+                            <h4 id="feedback-title" class="font-bold text-base"></h4>
+                            <p id="feedback-text" class="text-sm mt-1"></p>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex justify-end">
+                        <button id="next-btn" class="hidden px-6 py-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold transition-all flex items-center gap-2">
+                            Próxima Pergunta <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Quiz Completion View (Hidden initially) -->
+                <div id="result-box" class="hidden text-center py-8">
+                    <div class="w-20 h-20 rounded-full caribbean-gradient flex items-center justify-center mx-auto mb-6 text-4xl shadow-xl">
+                        🎉
+                    </div>
+                    <h3 class="text-3xl font-bold text-white mb-2">Parabéns! Desafio Concluído!</h3>
+                    <p class="text-slate-400 mb-6">Você explorou a rica história e cultura musical de Cuba.</p>
+
+                    <div class="bg-slate-900/80 rounded-2xl p-6 max-w-md mx-auto mb-8 border border-slate-800">
+                        <div class="text-sm text-slate-400">Sua Pontuação Final</div>
+                        <div id="final-score" class="text-5xl font-extrabold text-amber-400 my-2">0</div>
+                        <div id="final-title" class="text-base font-semibold text-slate-200">Título Obter</div>
+                    </div>
+
+                    <button id="restart-btn" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold transition-all inline-flex items-center gap-2">
+                        <i data-lucide="rotate-ccw" class="w-5 h-5"></i> Jogar Novamente
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-card border-t border-slate-800 py-10">
+        <div class="max-w-7xl mx-auto px-4 text-center text-slate-500 text-sm">
+            <p class="mb-2">🇨🇺 <strong>A Evolução da Música Cubana</strong> - Um tributo à cultura, aos ritmos e aos cantores do Caribe.</p>
+            <p>© 2026 - Desenvolvido para fins educacionais e culturais.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // QUIZ GAMIFICATION LOGIC
+        const quizData = [
+            {
+                question: "Qual bordão famoso era eternizado pela 'Rainha da Salsa', Celia Cruz, em suas apresentações?",
+                options: ["¡Oye Como Va!", "¡Azúcar!", "¡Chan Chan!", "¡Salsa y Sabor!"],
+                correct: 1,
+                explanation: "¡Azúcar! (Açúcar!) tornou-se a assinatura inconfundível de Celia Cruz, simbolizando a doçura e energia da música cubana."
+            },
+            {
+                question: "Qual é o nome do instrumento tradicional de 3 pares de cordas duplas essencial para o Son Cubano?",
+                options: ["Bandolim", "Cavaquinho", "Tres Cubano", "Ukulele"],
+                correct: 2,
+                explanation: "O Tres Cubano é a espinha dorsal harmônica do Son, famoso por executar o 'guajeo' (vamp de acordes e melodia)."
+            },
+            {
+                question: "Qual projeto musical dos anos 90 reuniu mestres veteranos cubanos e se tornou um fenômeno mundial com a música 'Chan Chan'?",
+                options: ["Irakere", "Los Van Van", "Orquesta Aragón", "Buena Vista Social Club"],
+                correct: 3,
+                explanation: "Organizado por Juan de Marcos González e Ry Cooder, o Buena Vista Social Club resgatou lendas como Compay Segundo e Ibrahim Ferrer."
+            },
+            {
+                question: "Qual padrão rítmico fundamental serve como guia invisível para toda a percussão e melodia na música cubana?",
+                options: ["A Clave", "O Swing", "O Compasso 4/4", "O Baião"],
+                correct: 0,
+                explanation: "A Clave (frequentemente 3-2 ou 2-3) é a chave rítmica da música afrocubana. Tudo se organiza em torno dela!"
+            },
+            {
+                question: "O ritmo contemporâneo que fundiu o Reggaeton com o sabor e os tambores da ilha cubana é popularmente chamado de:",
+                options: ["Mambotón", "Cubatón", "Salsatón", "Rumbatón"],
+                correct: 1,
+                explanation: "O Cubatón é a variante cubana do Reggaeton urbano, popularizada por grupos como Gente de Zona."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let answered = false;
+
+        // Elements
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackBox = document.getElementById('feedback-box');
+        const feedbackTitle = document.getElementById('feedback-title');
+        const feedbackText = document.getElementById('feedback-text');
+        const feedbackIcon = document.getElementById('feedback-icon');
+        const nextBtn = document.getElementById('next-btn');
+        const scoreDisplay = document.getElementById('score-display');
+        const levelBadge = document.getElementById('level-badge');
+        const currentQDisplay = document.getElementById('current-q');
+        const totalQDisplay = document.getElementById('total-q');
+        const progressBar = document.getElementById('progress-bar');
+        const quizBox = document.getElementById('quiz-box');
+        const resultBox = document.getElementById('result-box');
+        const finalScore = document.getElementById('final-score');
+        const finalTitle = document.getElementById('final-title');
+        const restartBtn = document.getElementById('restart-btn');
+
+        totalQDisplay.textContent = quizData.length;
+
+        function updateLevelBadge(currentScore) {
+            if (currentScore >= 100) {
+                levelBadge.textContent = "Mestre do Son Cubano 👑";
+                levelBadge.className = "px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs border border-amber-500/30";
+            } else if (currentScore >= 60) {
+                levelBadge.textContent = "Salsero Experiente 💃";
+                levelBadge.className = "px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400 font-bold text-xs border border-yellow-500/30";
+            } else {
+                levelBadge.textContent = "Novato da Clave 🥁";
+                levelBadge.className = "px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 font-bold text-xs border border-orange-500/30";
+            }
+        }
+
+        function loadQuestion() {
+            answered = false;
+            feedbackBox.classList.add('hidden');
+            nextBtn.classList.add('hidden');
+
+            const q = quizData[currentQuestion];
+            questionText.textContent = q.question;
+            currentQDisplay.textContent = currentQuestion + 1;
+
+            // Update Progress Bar
+            const progressPercent = ((currentQuestion) / quizData.length) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 transition-all flex justify-between items-center group font-medium";
+                btn.innerHTML = `
+                    <span>${opt}</span>
+                    <div class="w-6 h-6 rounded-full border border-slate-700 flex items-center justify-center text-xs group-hover:border-amber-400">
+                        ${String.fromCharCode(65 + idx)}
+                    </div>
+                `;
+                btn.onclick = () => selectOption(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function selectOption(selectedIndex, buttonEl) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQuestion];
+            const allButtons = optionsContainer.children;
+
+            // Disable all buttons
+            for (let btn of allButtons) {
+                btn.classList.add('cursor-not-allowed', 'opacity-70');
+            }
+
+            if (selectedIndex === q.correct) {
+                score += 20;
+                scoreDisplay.textContent = score;
+                updateLevelBadge(score);
+
+                buttonEl.classList.remove('bg-slate-900', 'border-slate-800', 'opacity-70');
+                buttonEl.classList.add('bg-emerald-950/80', 'border-emerald-500', 'text-emerald-200');
+
+                feedbackBox.className = "mt-6 p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 flex items-start gap-3";
+                feedbackTitle.textContent = "¡Excelente! Resposta Correta!";
+                feedbackIcon.setAttribute('data-lucide', 'check-circle');
+            } else {
+                buttonEl.classList.remove('bg-slate-900', 'border-slate-800', 'opacity-70');
+                buttonEl.classList.add('bg-rose-950/80', 'border-rose-500', 'text-rose-200');
+
+                // Highlight correct option
+                allButtons[q.correct].classList.remove('opacity-70');
+                allButtons[q.correct].classList.add('bg-emerald-950/40', 'border-emerald-500/50', 'text-emerald-300');
+
+                feedbackBox.className = "mt-6 p-4 rounded-xl bg-rose-950/60 border border-rose-500/40 text-rose-300 flex items-start gap-3";
+                feedbackTitle.textContent = "Não foi dessa vez!";
+                feedbackIcon.setAttribute('data-lucide', 'x-circle');
+            }
+
+            feedbackText.textContent = q.explanation;
+            feedbackBox.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        });
+
+        function showResults() {
+            progressBar.style.width = '100%';
+            quizBox.classList.add('hidden');
+            resultBox.classList.remove('hidden');
+
+            finalScore.textContent = `${score} pts`;
+
+            if (score === 100) {
+                finalTitle.textContent = "🏆 Embaixador da Música Cubana! Conhecimento Perfeito!";
+            } else if (score >= 60) {
+                finalTitle.textContent = "💃 Gran Ritmo! Você conhece muito bem a cultura e os cantores!";
+            } else {
+                finalTitle.textContent = "🥁 Bom começo! Releia a página e tente novamente para virar um mestre!";
+            }
+        }
+
+        restartBtn.addEventListener('click', () => {
+            currentQuestion = 0;
+            score = 0;
+            scoreDisplay.textContent = score;
+            updateLevelBadge(0);
+            resultBox.classList.add('hidden');
+            quizBox.classList.remove('hidden');
+            loadQuestion();
+        });
+
+        // Start Quiz
+        loadQuestion();
+    </script>
+</body>
+</html>

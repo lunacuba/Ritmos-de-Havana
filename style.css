@@ -1,0 +1,110 @@
+body{
+    background-color: rgb(255, 205, 234);
+}
+.cabecalho{
+    background-color: rgb(255, 178, 142);
+    text-align:center;
+    padding: 20px;
+    color:rgb(19, 20, 8)
+}
+.cabecalho img{
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+}
+.cabecalho h1{
+    margin: 10px 0 5px 0;
+}
+nav a{
+    color: rgb(128, 20, 216);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+ }
+ nav a:hover{
+    text-decoration: underline;
+ }
+ .container-galeria{
+    display:flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+ }
+ .item-galeria{
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    margin: 0;
+    text-align: center;
+    border: 1px solid #f7f0f0;
+    border-radius: 8px;
+    padding-bottom: 10px;
+    background-color: #fff;
+    box-shadow: o 4px 6px rgba(0,0,0,0,1);
+ }
+ .item-galeria img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+ }
+ .item-galeria figcaption {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #333;
+    padding: 0 10px;
+ }
+ .container{
+   display: flex;
+   gap: 20px;
+   padding: 20px;
+   flex-wrap: wrap;
+   justify-content: center;
+ }
+ .card {
+   background-color: #fca8a8;
+   width: 200px;
+   height: 250px;
+   border-radius: 12px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   padding: 20px;
+   text-align: center;
+   transition: transform 0.3s ease;
+   border: 2px solid #be1b44;
+ }
+ .card:hover {
+   transform: translateY(-10px);
+   background-color: #fffaf0;
+}
+
+.card i {
+   font-size: 3rem;
+   color: #fd77af;
+   margin-bottom: 15px;
+}
+
+.card h3 {
+   margin: 10px 0;
+   font-size: 1.2rem;
+   color: #cc218a;
+}
+
+.card p {
+   font-size: 0.9rem;
+   color: #666;
+   line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+   .item-galeria {
+       flex: 1 1 100%;       
+       }
+}
+
+ 

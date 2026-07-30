@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polo Montañez - O Guajiro Natural</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        cuba: {
+                            green: '#1b4332',
+                            lightgreen: '#40916c',
+                            gold: '#d4af37',
+                            clay: '#b07d62',
+                            dark: '#0f1f15',
+                            sand: '#fcfaf2'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .wood-pattern {
+            background-color: #0f1f15;
+            background-image: radial-gradient(rgba(212, 175, 55, 0.15) 1px, transparent 0),
+                              radial-gradient(rgba(212, 175, 55, 0.1) 1px, transparent 0);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-cuba-sand text-slate-800 font-sans antialiased min-h-screen">
+
+    <!-- Header / Nav -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cuba-dark/95 backdrop-blur-md border-b border-cuba-gold/20 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border border-cuba-gold flex items-center justify-center text-cuba-gold font-bold font-serif text-lg group-hover:bg-cuba-gold group-hover:text-cuba-dark transition-all duration-300">PM</div>
+                <span class="font-serif text-lg tracking-wider text-cuba-sand group-hover:text-cuba-gold transition-colors">POLO MONTAÑEZ</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-cuba-sand hover:text-cuba-gold transition-colors font-medium text-sm">Início</a>
+                <a href="#biografia" class="text-cuba-sand hover:text-cuba-gold transition-colors font-medium text-sm">Biografia</a>
+                <a href="#musica" class="text-cuba-sand hover:text-cuba-gold transition-colors font-medium text-sm">Música</a>
+                <a href="#legado" class="text-cuba-sand hover:text-cuba-gold transition-colors font-medium text-sm">Legado</a>
+                <a href="#tributos" class="text-cuba-sand hover:text-cuba-gold transition-colors font-medium text-sm">Tributos</a>
+            </nav>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-cuba-sand p-2 hover:text-cuba-gold focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cuba-dark border-b border-cuba-gold/20 py-4 px-6 space-y-4">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-cuba-sand hover:text-cuba-gold py-1">Início</a>
+            <a href="#biografia" onclick="toggleMobileMenu()" class="block text-cuba-sand hover:text-cuba-gold py-1">Biografia</a>
+            <a href="#musica" onclick="toggleMobileMenu()" class="block text-cuba-sand hover:text-cuba-gold py-1">Música</a>
+            <a href="#legado" onclick="toggleMobileMenu()" class="block text-cuba-sand hover:text-cuba-gold py-1">Legado</a>
+            <a href="#tributos" onclick="toggleMobileMenu()" class="block text-cuba-sand hover:text-cuba-gold py-1">Tributos</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative pt-20 min-h-screen flex items-center wood-pattern overflow-hidden text-cuba-sand">
+        <!-- Background Overlay / Cuban Atmosphere -->
+        <div class="absolute inset-0 bg-gradient-to-t from-cuba-dark via-cuba-dark/80 to-transparent"></div>
+        <div class="absolute -right-40 -top-40 w-96 h-96 bg-cuba-lightgreen/10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-40 -bottom-40 w-96 h-96 bg-cuba-gold/10 rounded-full blur-3xl"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 bg-cuba-green/40 border border-cuba-gold/30 rounded-full px-4 py-1.5 text-xs tracking-widest uppercase text-cuba-gold">
+                    <span class="w-2 h-2 rounded-full bg-cuba-gold animate-pulse"></span>
+                    <span>Homenagem ao Guajiro Natural</span>
+                </div>
+                <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-cuba-sand leading-tight">
+                    A Voz Pura da <br>
+                    <span class="text-cuba-gold">Terra Cubana</span>
+                </h1>
+                <p class="text-slate-300 text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    De carvoeiro nas montanhas de Pinar del Río a uma estrela internacional. Polo Montañez capturou a essência da alma camponesa de Cuba em canções de amor inesquecíveis.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="#musica" class="px-8 py-4 bg-cuba-gold hover:bg-yellow-500 text-cuba-dark font-bold rounded-xl shadow-lg hover:shadow-cuba-gold/20 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i data-lucide="play" class="w-5 h-5 fill-current"></i>
+                        <span>Ouvir Sucessos</span>
+                    </a>
+                    <a href="#biografia" class="px-8 py-4 bg-transparent hover:bg-cuba-sand/10 border border-cuba-sand/30 hover:border-cuba-gold/50 text-cuba-sand font-semibold rounded-xl transition-all duration-300 flex items-center justify-center">
+                        Conhecer História
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 flex justify-center relative">
+                <!-- Main Graphic (Polo Portrait Styled placeholder) -->
+                <div class="relative w-72 h-96 sm:w-80 sm:h-[420px] rounded-2xl overflow-hidden shadow-2xl border-2 border-cuba-gold/40 transform rotate-2 hover:rotate-0 transition-transform duration-500 bg-cuba-green flex flex-col justify-end p-6">
+                    <!-- SVG Silhouette of a Guitar and mountains representing Pinar del Río -->
+                    <div class="absolute inset-0 opacity-40 bg-gradient-to-b from-cuba-gold/20 via-transparent to-cuba-dark"></div>
+                    <svg class="absolute inset-0 w-full h-full p-4 text-cuba-gold/25" viewBox="0 0 100 100" fill="currentColor">
+                        <!-- Landscape outline -->
+                        <path d="M0 80 Q25 60 50 80 T100 80 L100 100 L0 100 Z" />
+                        <path d="M0 90 Q30 75 60 90 T100 90 L100 100 L0 100 Z" class="opacity-50" />
+                        <!-- Guitar neck/body silhouette -->
+                        <path d="M45 10 L55 10 L55 40 L65 48 A15 15 0 0 1 65 72 A15 15 0 0 1 35 72 A15 15 0 0 1 35 48 L45 40 Z" class="opacity-30" />
+                    </svg>
+                    <!-- Simulated authentic image styling of Polo wearing his classic hat -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center w-full px-4">
+                        <span class="block font-serif text-7xl text-cuba-gold/20 mb-2">🪕</span>
+                        <p class="font-serif italic text-cuba-gold/70 text-sm">"Eu sou apenas um guajiro que canta o que vive."</p>
+                    </div>
+                    
+                    <div class="relative z-10 bg-cuba-dark/90 backdrop-blur-sm p-4 rounded-xl border border-cuba-gold/30">
+                        <p class="font-serif text-lg text-cuba-gold font-bold">Polo Montañez</p>
+                        <p class="text-xs text-slate-300">Fernando Borrego Linares (1955 - 2002)</p>
+                    </div>
+                </div>
+                <!-- Decorative elements -->
+                <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-cuba-gold/20 rounded-full blur-xl"></div>
+            </div>
+        </div>
+        
+        <!-- Bottom wave -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 120" fill="none" class="w-full h-12 text-cuba-sand preserve-3d">
+                <path d="M0,32L120,42.7C240,53,480,75,720,74.7C960,75,1200,53,1320,42.7L1440,32L1440,120L1320,120C1200,120,960,120,720,120C480,120,240,120,120,120L0,120Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section id="biografia" class="py-24 bg-cuba-sand relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-cuba-dark">A Saga de um Guajiro Natural</h2>
+                <div class="w-24 h-1 bg-cuba-gold mx-auto my-4"></div>
+                <p class="text-slate-600">Da simplicidade dos campos de Cuba ao estrelato internacional em tempo recorde.</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-cuba-green/20 ml-4 md:ml-32 space-y-16">
+                <!-- Item 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <!-- Bullet -->
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-cuba-green border-4 border-cuba-sand flex items-center justify-center"></div>
+                    <!-- Date flag -->
+                    <div class="md:absolute md:-left-36 md:top-1 font-serif text-lg font-bold text-cuba-green md:w-28 md:text-right mb-2 md:mb-0">
+                        1955
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md max-w-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+                        <h3 class="font-serif text-xl font-bold text-cuba-dark mb-2">Origens na Sierra del Rosario</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Nascido Fernando Borrego Linares em uma família humilde. Desde cedo trabalhou com a terra, fazendo carvão vegetal e cortando madeira. A música era sua paixão secreta, aprendendo de ouvido a tocar violão e instrumentos de percussão tradicionais.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-cuba-gold border-4 border-cuba-sand"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-serif text-lg font-bold text-cuba-gold md:w-28 md:text-right mb-2 md:mb-0">
+                        Anos 90
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md max-w-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+                        <h3 class="font-serif text-xl font-bold text-cuba-dark mb-2">O Cantor do Complexo Las Terrazas</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Polo começa a cantar profissionalmente no hotel do complexo turístico ecológico Las Terrazas. Ali, sua voz rústica e melodia carismática começaram a chamar a atenção de viajantes de todo o mundo, misturando o som campesino com a guaracha e o bolero.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-cuba-green border-4 border-cuba-sand"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-serif text-lg font-bold text-cuba-green md:w-28 md:text-right mb-2 md:mb-0">
+                        2000
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md max-w-3xl border border-slate-100 hover:shadow-lg transition-shadow">
+                        <h3 class="font-serif text-xl font-bold text-cuba-dark mb-2">O Fenômeno "Guajiro Natural"</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Descoberto por uma gravadora francesa (Lusafrica), Polo lança seu álbum de estreia <strong class="text-cuba-green">"Guajiro Natural"</strong>. O disco estoura de forma estrondosa na Colômbia e depois em Cuba, conquistando discos de platina e lotando estádios. O mundo descobria o compositor de "Un Montón de Estrellas".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[11px] top-1.5 w-5 h-5 rounded-full bg-red-600 border-4 border-cuba-sand"></div>
+                    <div class="md:absolute md:-left-36 md:top-1 font-serif text-lg font-bold text-red-600 md:w-28 md:text-right mb-2 md:mb-0">
+                        2002
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md max-w-3xl border border-red-100 hover:shadow-lg transition-shadow">
+                        <h3 class="font-serif text-xl font-bold text-red-700 mb-2">Partida Precoce</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            No auge de sua carreira e logo após o lançamento de seu segundo disco, <strong class="text-cuba-dark">"Guitarra Mía"</strong>, Polo sofre um trágico acidente automobilístico no retorno a San Cristóbal. Ele faleceu em 26 de novembro de 2002, deixando Cuba e toda a América Latina em luto nacional. Seu legado, no entanto, tornou-se imortal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music & Interactive Player Section -->
+    <section id="musica" class="py-24 bg-cuba-green wood-pattern text-cuba-sand relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cuba-gold uppercase tracking-widest text-sm font-semibold">Experiência Sonora</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2">Suas Canções Imortais</h2>
+                <div class="w-24 h-1 bg-cuba-gold mx-auto my-4"></div>
+                <p class="text-slate-300">Selecione uma canção abaixo para tocar e ver as letras originais traduzidas.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <!-- Tracklist selection -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h3 class="font-serif text-2xl text-cuba-gold mb-6 border-b border-cuba-gold/20 pb-2">Selecione a Faixa</h3>
+                    
+                    <!-- Track 1 -->
+                    <button onclick="selectSong('estrellas')" id="btn-estrellas" class="w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group song-btn bg-cuba-dark/60 border-cuba-gold/40 text-cuba-gold">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-cuba-gold/20 flex items-center justify-center text-cuba-gold group-hover:bg-cuba-gold group-hover:text-cuba-dark transition-colors">
+                                <i data-lucide="music" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">Un Montón de Estrellas</p>
+                                <p class="text-xs text-slate-400">Álbum: Guajiro Natural (2000)</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-cuba-gold/20 px-3 py-1 rounded-full">4:25</span>
+                    </button>
+
+                    <!-- Track 2 -->
+                    <button onclick="selectSong('flor')" id="btn-flor" class="w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group song-btn bg-cuba-dark/20 border-cuba-gold/10 hover:border-cuba-gold/40 text-slate-300">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-cuba-gold/10 flex items-center justify-center text-cuba-gold group-hover:bg-cuba-gold group-hover:text-cuba-dark transition-colors">
+                                <i data-lucide="music" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-cuba-sand">Flor Pálida</p>
+                                <p class="text-xs text-slate-400">Álbum: Guitarra Mía (2002)</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full">4:40</span>
+                    </button>
+
+                    <!-- Track 3 -->
+                    <button onclick="selectSong('guajiro')" id="btn-guajiro" class="w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group song-btn bg-cuba-dark/20 border-cuba-gold/10 hover:border-cuba-gold/40 text-slate-300">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-cuba-gold/10 flex items-center justify-center text-cuba-gold group-hover:bg-cuba-gold group-hover:text-cuba-dark transition-colors">
+                                <i data-lucide="music" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-cuba-sand">Guajiro Natural</p>
+                                <p class="text-xs text-slate-400">Álbum: Guajiro Natural (2000)</p>
+                            </div>
+                        </div>
+                        <span class="text-xs bg-white/5 px-3 py-1 rounded-full">3:55</span>
+                    </button>
+                </div>
+
+                <!-- Interactive Player Display -->
+                <div class="lg:col-span-7 bg-cuba-dark/90 border border-cuba-gold/30 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+                    <!-- Subtle background decoration -->
+                    <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-cuba-gold/5 rounded-full blur-2xl"></div>
+                    
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-6 mb-8 border-b border-cuba-gold/10 pb-6">
+                        <div class="text-center sm:text-left">
+                            <h4 id="player-title" class="font-serif text-2xl text-cuba-gold font-bold">Un Montón de Estrellas</h4>
+                            <p id="player-album" class="text-sm text-slate-400">Do álbum "Guajiro Natural"</p>
+                        </div>
+                        <!-- Virtual Audio Wave -->
+                        <div id="visualizer" class="flex items-end justify-center space-x-1 h-12 w-32">
+                            <div class="w-1.5 bg-cuba-gold/40 rounded-full h-2"></div>
+                            <div class="w-1.5 bg-cuba-gold/60 rounded-full h-3"></div>
+                            <div class="w-1.5 bg-cuba-gold rounded-full h-1"></div>
+                            <div class="w-1.5 bg-cuba-gold/50 rounded-full h-4"></div>
+                            <div class="w-1.5 bg-cuba-gold rounded-full h-2"></div>
+                            <div class="w-1.5 bg-cuba-gold/70 rounded-full h-5"></div>
+                            <div class="w-1.5 bg-cuba-gold/30 rounded-full h-3"></div>
+                        </div>
+                    </div>
+
+                    <!-- Lyrics Container -->
+                    <div class="bg-cuba-green/30 rounded-2xl p-6 border border-cuba-gold/10 min-h-[220px] max-h-[300px] overflow-y-auto mb-8 scrollbar-thin">
+                        <p class="text-xs uppercase tracking-wider text-cuba-gold/50 mb-3 font-semibold">Letra original / Tradução:</p>
+                        <div id="player-lyrics" class="space-y-4 text-center text-sm md:text-base leading-relaxed italic text-slate-200">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Player Controls -->
+                    <div class="space-y-6">
+                        <!-- Progress bar -->
+                        <div class="space-y-2">
+                            <div class="relative h-2 w-full bg-slate-800 rounded-full cursor-pointer overflow-hidden" onclick="seekAudio(event)">
+                                <div id="progress-bar" class="absolute top-0 left-0 h-full w-0 bg-cuba-gold transition-all duration-300"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-slate-400">
+                                <span id="current-time">0:00</span>
+                                <span id="total-time">4:25</span>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="flex items-center justify-center space-x-6">
+                            <button onclick="prevSong()" class="p-3 text-slate-400 hover:text-cuba-gold transition-colors">
+                                <i data-lucide="skip-back" class="w-6 h-6"></i>
+                            </button>
+                            <button onclick="togglePlay()" id="play-btn" class="p-5 bg-cuba-gold text-cuba-dark hover:bg-yellow-500 rounded-full shadow-lg transition-transform hover:scale-105">
+                                <i id="play-icon" data-lucide="play" class="w-7 h-7 fill-current"></i>
+                            </button>
+                            <button onclick="nextSong()" class="p-3 text-slate-400 hover:text-cuba-gold transition-colors">
+                                <i data-lucide="skip-forward" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy / Influence Section -->
+    <section id="legado" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-cuba-lightgreen uppercase tracking-widest text-sm font-semibold">A Influência e a Memória</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-bold text-cuba-dark leading-tight">O Eterno Retorno do Poeta do Povo</h2>
+                    <div class="w-20 h-1 bg-cuba-gold"></div>
+                    <p class="text-slate-600 leading-relaxed">
+                        A simplicidade poética de Polo Montañez quebrou barreiras e conquistou os corações de grandes intérpretes da música latina. Suas melodias autênticas e sinceras ganharam novas vidas e continuam ecoando em rádios e palcos de todo o planeta.
+                    </p>
+                    
+                    <div class="bg-cuba-sand p-6 rounded-2xl border-l-4 border-cuba-gold space-y-4 shadow-sm">
+                        <h4 class="font-serif font-bold text-cuba-dark">"Flor Pálida" e Marc Anthony</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A canção de amor melancólica que Polo escreveu originalmente para sua amada foi imortalizada na voz da superestrela da salsa Marc Anthony em 2013, tornando-se um dos hits globais mais tocados do gênero salsa e provando o brilho eterno das composições do Guajiro.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                    <!-- Feature box 1 -->
+                    <div class="bg-cuba-sand p-6 rounded-3xl border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 shadow-sm">
+                        <span class="text-3xl">🇨🇺</span>
+                        <h4 class="font-serif font-bold text-cuba-dark mt-4 mb-2">Herói Nacional</h4>
+                        <p class="text-xs text-slate-500">Mantém-se como um dos cantores mais amados de Cuba, sua casa em Las Terrazas hoje é um museu visitado por milhares.</p>
+                    </div>
+                    <!-- Feature box 2 -->
+                    <div class="bg-cuba-sand p-6 rounded-3xl border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 shadow-sm">
+                        <span class="text-3xl">💿</span>
+                        <h4 class="font-serif font-bold text-cuba-dark mt-4 mb-2">Disco de Platina</h4>
+                        <p class="text-xs text-slate-500">Seu primeiro álbum vendeu mais de 100.000 cópias em tempo recorde na Colômbia.</p>
+                    </div>
+                    <!-- Feature box 3 -->
+                    <div class="bg-cuba-sand p-6 rounded-3xl border border-slate-100 text-center hover:-translate-y-2 transition-transform duration-300 shadow-sm col-span-2">
+                        <span class="text-3xl">✨</span>
+                        <h4 class="font-serif font-bold text-cuba-dark mt-4 mb-2">"Un Montón de Estrellas"</h4>
+                        <p class="text-xs text-slate-500">Um clássico tocado em todos os cantos da América Latina, símbolo da rumba e do som guajiro de raiz.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tribute Board (Dynamic) -->
+    <section id="tributos" class="py-24 bg-cuba-sand relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-cuba-lightgreen uppercase tracking-widest text-sm font-semibold">Espaço da Comunidade</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold mt-2 text-cuba-dark">Mural de Homenagens</h2>
+                <div class="w-24 h-1 bg-cuba-gold mx-auto my-4"></div>
+                <p class="text-slate-600">Compartilhe sua mensagem de amor e admiração pelo eterno Polo Montañez.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Submit form -->
+                <div class="lg:col-span-5 bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+                    <h3 class="font-serif text-2xl text-cuba-dark font-bold mb-6">Deixe sua Homenagem</h3>
+                    <form id="tributeForm" onsubmit="handleTributeSubmit(event)" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2" for="authorName">Seu Nome / País</label>
+                            <input type="text" id="authorName" required placeholder="Ex: Roberto - Salvador, Brasil" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cuba-green focus:border-transparent outline-none transition-all text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2" for="message">Mensagem de Homenagem</label>
+                            <textarea id="message" required rows="4" placeholder="Escreva o que a música de Polo representa para você..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-cuba-green focus:border-transparent outline-none transition-all text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-cuba-green hover:bg-cuba-lightgreen text-cuba-sand font-bold rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center space-x-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span>Publicar no Mural</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Tributes grid display -->
+                <div class="lg:col-span-7">
+                    <h3 class="font-serif text-2xl text-cuba-dark font-bold mb-6 flex items-center space-x-2">
+                        <span>Mensagens de Fãs</span>
+                        <span id="tributeCount" class="text-xs bg-cuba-green text-cuba-sand px-2 py-0.5 rounded-full font-sans">3</span>
+                    </h3>
+                    
+                    <div id="tributeWall" class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-h-[500px] overflow-y-auto pr-2">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-cuba-dark text-cuba-sand border-t border-cuba-gold/20 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <h3 class="font-serif text-2xl text-cuba-gold">Polo Montañez</h3>
+            <p class="text-sm text-slate-400 max-w-xl mx-auto">
+                "Vivo de canções... cantando de sentimentos honestos." Homenagem interativa dedicada a preservar a cultura camponesa cubana e o som doce de San Cristóbal.
+            </p>
+            <div class="w-12 h-[1px] bg-cuba-gold/30 mx-auto"></div>
+            <p class="text-xs text-slate-500">
+                &copy; <span id="year"></span> Polo Montañez Tribute. Desenvolvido com carinho para os amantes da música cubana.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Logic -->
+    <script>
+        // Init Lucide
+        lucide.createIcons();
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- Interactive Audio Player Database ---
+        const songs = {
+            estrellas: {
+                title: "Un Montón de Estrellas",
+                album: "Do álbum \"Guajiro Natural\" (2000)",
+                duration: 265, // in seconds (4:25)
+                lyrics: [
+                    { es: "Yo no sé por qué razón", pt: "Eu não sei por qual razão" },
+                    { es: "Cantarle a ella me da frío", pt: "Cantar para ela me dá frio" },
+                    { es: "Y es que no puedo vivir", pt: "E é que eu não posso viver" },
+                    { es: "De tanta angustia y delirio", pt: "De tanta angústia e delírio" },
+                    { es: "Y me parece mentira que yo quiera como quiero", pt: "E me parece mentira que eu queira como eu quero" },
+                    { es: "A esa mujer que me tiene, como un títere en su juego", pt: "A essa mulher que me tem como um fantoche em seu jogo" },
+                    { es: "Y no sé qué voy a hacer, si me olvido de mí mismo", pt: "E não sei o que vou fazer se eu esquecer de mim mesmo" },
+                    { es: "Y me hundo en un abismo por un amor que no se ve", pt: "E me afundar num abismo por um amor que não se vê" }
+                ]
+            },
+            flor: {
+                title: "Flor Pálida",
+                album: "Do álbum \"Guitarra Mía\" (2002)",
+                duration: 280, // 4:40
+                lyrics: [
+                    { es: "Hallé una flor un día en el camino", pt: "Achei uma flor um dia no caminho" },
+                    { es: "Que marchita deshojada ya casi moría", pt: "Que murcha e desfolhada já quase morria" },
+                    { es: "La tomé en mis manos, le hablé de mi amor", pt: "A peguei em minhas mãos, falei com ela do meu amor" },
+                    { es: "Le presté cuidados, y la cubrí de caricias", pt: "Dei cuidados a ela e a cobri de carícias" },
+                    { es: "La planté en mi jardín para que no muriera", pt: "Plantei no meu jardim para que não morresse" },
+                    { es: "Y de agua de lluvia la coroné primero", pt: "E com água da chuva a coroei primeiro" },
+                    { es: "Y luego brotaron colores preciosos de mi bella flor", pt: "E logo brotaram cores preciosas da minha bela flor" }
+                ]
+            },
+            guajiro: {
+                title: "Guajiro Natural",
+                album: "Do álbum \"Guajiro Natural\" (2000)",
+                duration: 235, // 3:55
+                lyrics: [
+                    { es: "Soy un guajiro natural", pt: "Eu sou um guajiro natural" },
+                    { es: "Que viene de la loma de la montaña", pt: "Que vem do pico da montanha" },
+                    { es: "Yo sé sembrar la tierra y cantarle al sol", pt: "Eu sei semear a terra e cantar ao sol" },
+                    { es: "Y hacer sonar mi guitarra con todo el corazón", pt: "E fazer soar minha guitarra com todo o coração" },
+                    { es: "No tengo lujos, no tengo riqueza", pt: "Não tenho luxos, não tenho riqueza" },
+                    { es: "Pero tengo el aire puro de mi naturaleza", pt: "Mas tenho o ar puro da minha natureza" },
+                    { es: "Y el amor de mi pueblo, que es mi mayor nobleza", pt: "E o amor do meu povo, que é minha maior nobreza" }
+                ]
+            }
+        };
+
+        let currentSongId = 'estrellas';
+        let isPlaying = false;
+        let playInterval;
+        let currentTimeInSec = 0;
+
+        // Visualizer bar heights animation function
+        function animateVisualizer(active) {
+            const visualizer = document.getElementById('visualizer');
+            const bars = visualizer.children;
+            if (active) {
+                for (let bar of bars) {
+                    const randomHeight = Math.floor(Math.random() * 28) + 8;
+                    bar.style.height = `${randomHeight}px`;
+                    bar.style.backgroundColor = '#d4af37';
+                }
+            } else {
+                for (let bar of bars) {
+                    bar.style.height = '6px';
+                    bar.style.backgroundColor = 'rgba(212, 175, 55, 0.3)';
+                }
+            }
+        }
+
+        // Render Lyrics
+        function renderLyrics() {
+            const lyricsContainer = document.getElementById('player-lyrics');
+            lyricsContainer.innerHTML = '';
+            
+            const currentSong = songs[currentSongId];
+            
+            // Generate randomized lyric segments for mock visual sync
+            currentSong.lyrics.forEach((line, index) => {
+                const lineDiv = document.createElement('div');
+                lineDiv.id = `lyric-line-${index}`;
+                lineDiv.className = 'py-2 transition-all duration-300 opacity-60 transform scale-95';
+                lineDiv.innerHTML = `
+                    <p class="text-cuba-gold font-serif font-semibold text-lg md:text-xl">${line.es}</p>
+                    <p class="text-slate-300 text-xs md:text-sm mt-1">${line.pt}</p>
+                `;
+                lyricsContainer.appendChild(lineDiv);
+            });
+            
+            highlightLyricLine(0);
+        }
+
+        function highlightLyricLine(lineIndex) {
+            const currentSong = songs[currentSongId];
+            currentSong.lyrics.forEach((_, index) => {
+                const line = document.getElementById(`lyric-line-${index}`);
+                if (line) {
+                    if (index === lineIndex) {
+                        line.className = 'py-3 transition-all duration-300 opacity-100 transform scale-105 bg-cuba-gold/10 rounded-xl px-4 border-l-2 border-cuba-gold';
+                        line.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    } else {
+                        line.className = 'py-2 transition-all duration-300 opacity-40 transform scale-95';
+                    }
+                }
+            });
+        }
+
+        // Format Seconds to display (MM:SS)
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        function updateProgress() {
+            const currentSong = songs[currentSongId];
+            const progressBar = document.getElementById('progress-bar');
+            const percent = (currentTimeInSec / currentSong.duration) * 100;
+            progressBar.style.width = `${percent}%`;
+            document.getElementById('current-time').innerText = formatTime(currentTimeInSec);
+
+            // Sync lyrics highlighting based on time intervals
+            const lyricIntervals = currentSong.lyrics.length;
+            const timePerLine = currentSong.duration / lyricIntervals;
+            const activeLine = Math.floor(currentTimeInSec / timePerLine);
+            if (activeLine < lyricIntervals) {
+                highlightLyricLine(activeLine);
+            }
+        }
+
+        function togglePlay() {
+            const playIcon = document.getElementById('play-icon');
+            const currentSong = songs[currentSongId];
+            
+            if (isPlaying) {
+                // Pause
+                clearInterval(playInterval);
+                isPlaying = false;
+                playIcon.setAttribute('data-lucide', 'play');
+                lucide.createIcons();
+                animateVisualizer(false);
+            } else {
+                // Play
+                isPlaying = true;
+                playIcon.setAttribute('data-lucide', 'pause');
+                lucide.createIcons();
+                
+                playInterval = setInterval(() => {
+                    currentTimeInSec++;
+                    if (currentTimeInSec >= currentSong.duration) {
+                        currentTimeInSec = 0;
+                        nextSong();
+                    }
+                    updateProgress();
+                    animateVisualizer(true);
+                }, 1000);
+            }
+        }
+
+        function selectSong(songId) {
+            // Update Active buttons states
+            document.querySelectorAll('.song-btn').forEach(btn => {
+                btn.className = "w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group song-btn bg-cuba-dark/20 border-cuba-gold/10 hover:border-cuba-gold/40 text-slate-300";
+            });
+            const activeBtn = document.getElementById(`btn-${songId}`);
+            if (activeBtn) {
+                activeBtn.className = "w-full text-left p-5 rounded-2xl border transition-all duration-300 flex items-center justify-between group song-btn bg-cuba-dark/60 border-cuba-gold/40 text-cuba-gold";
+            }
+
+            // Reset States
+            clearInterval(playInterval);
+            isPlaying = false;
+            currentTimeInSec = 0;
+            currentSongId = songId;
+
+            const song = songs[songId];
+            document.getElementById('player-title').innerText = song.title;
+            document.getElementById('player-album').innerText = song.album;
+            document.getElementById('total-time').innerText = formatTime(song.duration);
+            document.getElementById('current-time').innerText = "0:00";
+            document.getElementById('progress-bar').style.width = "0%";
+            
+            document.getElementById('play-icon').setAttribute('data-lucide', 'play');
+            lucide.createIcons();
+            
+            renderLyrics();
+            animateVisualizer(false);
+        }
+
+        function nextSong() {
+            const keys = Object.keys(songs);
+            let nextIndex = keys.indexOf(currentSongId) + 1;
+            if (nextIndex >= keys.length) nextIndex = 0;
+            selectSong(keys[nextIndex]);
+            togglePlay(); // Auto start next
+        }
+
+        function prevSong() {
+            const keys = Object.keys(songs);
+            let prevIndex = keys.indexOf(currentSongId) - 1;
+            if (prevIndex < 0) prevIndex = keys.length - 1;
+            selectSong(keys[prevIndex]);
+            togglePlay();
+        }
+
+        function seekAudio(e) {
+            const rect = e.target.closest('.relative').getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const percent = clickX / width;
+            const currentSong = songs[currentSongId];
+            currentTimeInSec = Math.floor(percent * currentSong.duration);
+            updateProgress();
+        }
+
+        // --- Tribute Board Module ---
+        // Initial Mock Tributes
+        let tributesList = [
+            {
+                name: "Maria González - Havana, Cuba",
+                date: "Hoje",
+                msg: "Polo representava toda a humildade e beleza do camponês cubano. Sua música nunca morrerá, ela corre em nosso sangue!"
+            },
+            {
+                name: "Juan Carlos - Cali, Colômbia",
+                date: "Ontem",
+                msg: "Na Colômbia te amamos para sempre, Polo! 'Un montón de estrellas' é um hino indiscutível de todas as nossas festas e corações."
+            },
+            {
+                name: "Leticia Ramos - Lisboa, Portugal",
+                date: "Há 3 dias",
+                msg: "A simplicidade das letras dele entra direto na alma. Que gênio da composição cubana."
+            }
+        ];
+
+        function renderTributes() {
+            const container = document.getElementById('tributeWall');
+            container.innerHTML = '';
+            
+            document.getElementById('tributeCount').innerText = tributesList.length;
+
+            tributesList.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow duration-300";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center space-x-1 text-cuba-gold mb-3">
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic mb-4">"${item.msg}"</p>
+                    </div>
+                    <div class="border-t border-slate-100 pt-3 flex justify-between items-center text-xs text-slate-400">
+                        <span class="font-bold text-slate-700">${item.name}</span>
+                        <span>${item.date}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function handleTributeSubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('authorName');
+            const messageInput = document.getElementById('message');
+
+            const newTribute = {
+                name: nameInput.value,
+                date: "Agora mesmo",
+                msg: messageInput.value
+            };
+
+            // Unshift to put it first
+            tributesList.unshift(newTribute);
+            renderTributes();
+
+            // Clear fields
+            nameInput.value = '';
+            messageInput.value = '';
+
+            // Elegant success toast-like action
+            const submitBtn = event.target.querySelector('button');
+            const originalHTML = submitBtn.innerHTML;
+            submitBtn.className = "w-full py-4 bg-cuba-lightgreen text-white font-bold rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center space-x-2";
+            submitBtn.innerHTML = `<span>Publicado com sucesso!</span>`;
+            setTimeout(() => {
+                submitBtn.className = "w-full py-4 bg-cuba-green hover:bg-cuba-lightgreen text-cuba-sand font-bold rounded-xl shadow-lg transition-all duration-300 flex items-center justify-center space-x-2";
+                submitBtn.innerHTML = originalHTML;
+            }, 2500);
+        }
+
+        // Initialize App
+        window.onload = function() {
+            selectSong('estrellas');
+            renderTributes();
+        };
+    </script>
+</body>
+</html>

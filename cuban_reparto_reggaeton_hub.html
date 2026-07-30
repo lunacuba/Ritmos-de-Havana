@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reparto & Reggaeton Cubano (2006 - 2026)</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0b0f19;
+      color: #f3f4f6;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #f43f5e 0%, #fb923c 50%, #facc15 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card:hover {
+      border-color: rgba(244, 63, 94, 0.4);
+      transform: translateY(-3px);
+      transition: all 0.3s ease;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #374151;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #f43f5e;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 glass-card border-b border-gray-800 bg-opacity-90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-amber-400 flex items-center justify-center font-black text-xl text-black shadow-lg shadow-rose-500/20">
+          🇨🇺
+        </div>
+        <div>
+          <h1 class="text-xl sm:text-2xl font-black tracking-tight">REPARTO <span class="gradient-text">& REGGAETON</span></h1>
+          <p class="text-xs text-gray-400">Cuba Urban Movement • 2006 a 2026</p>
+        </div>
+      </div>
+
+      <!-- Quick Nav Buttons -->
+      <nav class="flex flex-wrap gap-2 text-xs sm:text-sm">
+        <button onclick="scrollToSection('artists')" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-rose-600 transition font-semibold text-gray-200 hover:text-white">
+          <i class="fa-solid fa-users mr-1"></i> Artistas Ordenados
+        </button>
+        <button onclick="scrollToSection('timeline')" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-rose-600 transition font-semibold text-gray-200 hover:text-white">
+          <i class="fa-solid fa-timeline mr-1"></i> Linha do Tempo
+        </button>
+        <button onclick="scrollToSection('highlights')" class="px-3 py-1.5 rounded-lg bg-gray-800 hover:bg-rose-600 transition font-semibold text-gray-200 hover:text-white">
+          <i class="fa-solid fa-trophy mr-1"></i> Mais Destaques & Status
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative py-12 lg:py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-gray-900 to-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <span class="inline-block px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-400/10 rounded-full border border-amber-400/30">
+        Enciclopédia da Música Urbana Cubana
+      </span>
+      <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
+        Do Cubatón ao Ritmo do <span class="gradient-text">Reparto Urbano</span>
+      </h2>
+      <p class="max-w-3xl mx-auto text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+        Guia definitivo dos principais exponentes da música urbana de Cuba de 2006 a 2026. Descubra onde eles vivem atualmente, suas idades ordenadas, seus maiores sucessos mundiais e o impacto cultural do gênero.
+      </p>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="p-4 rounded-xl glass-card text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-rose-500">2006-2026</div>
+          <div class="text-xs text-gray-400 mt-1">20 Anos de Evolução</div>
+        </div>
+        <div class="p-4 rounded-xl glass-card text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400" id="total-artists-count">16+</div>
+          <div class="text-xs text-gray-400 mt-1">Principais Exponentes</div>
+        </div>
+        <div class="p-4 rounded-xl glass-card text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400">Cuba & EUA</div>
+          <div class="text-xs text-gray-400 mt-1">Havana • Miami • Europa</div>
+        </div>
+        <div class="p-4 rounded-xl glass-card text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-400">Reparto</div>
+          <div class="text-xs text-gray-400 mt-1">Rumba, Clave & Reggaeton</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: Main Artists Directory (Sorted by Age) -->
+  <section id="artists" class="py-12 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white flex items-center gap-2">
+            <i class="fa-solid fa-users text-rose-500"></i> Cantores Ordenados por Idade
+          </h2>
+          <p class="text-gray-400 text-sm mt-1">Do mais jovem ao mais velho (Ordem Crescente de Idade)</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="flex flex-wrap items-center gap-3">
+          <div class="relative">
+            <input type="text" id="search-input" placeholder="Buscar artista ou música..." oninput="filterArtists()" class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-gray-200 focus:outline-none focus:border-rose-500 pl-8 w-48 sm:w-64">
+            <i class="fa-solid fa-magnifying-glass absolute left-2.5 top-3 text-gray-500 text-xs"></i>
+          </div>
+
+          <select id="location-filter" onchange="filterArtists()" class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-gray-200 focus:outline-none focus:border-rose-500">
+            <option value="all">Todas as Localizações</option>
+            <option value="Cuba">Em Cuba 🇨🇺</option>
+            <option value="EUA">Nos EUA / Miami 🇺🇸</option>
+            <option value="Espanha">Na Espanha 🇪🇸</option>
+          </select>
+
+          <select id="genre-filter" onchange="filterArtists()" class="bg-gray-900 border border-gray-700 rounded-lg px-3 py-2 text-xs sm:text-sm text-gray-200 focus:outline-none focus:border-rose-500">
+            <option value="all">Todos os Estilos</option>
+            <option value="Reparto">Reparto Purista</option>
+            <option value="Reggaeton/Cubatón">Reggaeton / Cubatón</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Artists Grid -->
+      <div id="artists-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- JS insertion -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Timeline of Dominance (2006 - 2026) -->
+  <section id="timeline" class="py-12 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-black text-white">
+          <i class="fa-solid fa-clock-rotate-left text-amber-400 mr-2"></i> Cronologia Musical (2006 – 2026)
+        </h2>
+        <p class="text-gray-400 text-sm mt-2">Como o movimento urbano evoluiu de Cubatón para o fenômeno Reparto mundial</p>
+      </div>
+
+      <div class="relative border-l-2 border-rose-500/30 ml-4 md:ml-32 space-y-8">
+
+        <!-- Era 1 -->
+        <div class="relative pl-6 md:pl-8">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-rose-500 border-4 border-gray-900"></div>
+          <div class="md:absolute md:-left-36 md:top-1 font-black text-rose-400 text-lg">2006 – 2012</div>
+          <div class="glass-card p-5 rounded-xl">
+            <h3 class="text-lg font-bold text-white">A Era Dourada do Cubatón (Reggaeton Cubano)</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+              Grupos como <span class="text-rose-400 font-semibold">Gente de Zona</span>, <span class="text-rose-400 font-semibold">El Chacal</span>, <span class="text-rose-400 font-semibold">Baby Lores</span> e <span class="text-rose-400 font-semibold">Los 4</span> fundem o reggaeton porto-riquenho com ritmos tradicionais cubanos (timba e rumba), criando o Cubatón que dominou clubes na Europa e América Latina.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="bg-gray-800 px-2.5 py-1 rounded-full text-amber-300">Hits: El Taxi, Hasta Que Se Seque el Malecón, El Motorola</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 2 -->
+        <div class="relative pl-6 md:pl-8">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-amber-500 border-4 border-gray-900"></div>
+          <div class="md:absolute md:-left-36 md:top-1 font-black text-amber-400 text-lg">2013 – 2017</div>
+          <div class="glass-card p-5 rounded-xl">
+            <h3 class="text-lg font-bold text-white">Nascimento & Afirmação do Reparto ("El Guachineo")</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+              <span class="text-amber-400 font-semibold">Chocolate MC</span> reinventa a cena adicionando palmas de clave e bumbo de timba, batizando o estilo de <i>Reparto</i> (ou <i>Raggamuffin Repartero</i>). O lançamento de <i>"Guachineo"</i> e <i>"Bajanda"</i> define a identidade dos bairros marginalizados de Havana.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="bg-gray-800 px-2.5 py-1 rounded-full text-amber-300">Pioneiro: Chocolate MC ("El Rey del Reparto")</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 3 -->
+        <div class="relative pl-6 md:pl-8">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-emerald-500 border-4 border-gray-900"></div>
+          <div class="md:absolute md:-left-36 md:top-1 font-black text-emerald-400 text-lg">2018 – 2021</div>
+          <div class="glass-card p-5 rounded-xl">
+            <h3 class="text-lg font-bold text-white">Revolução do TrapTon & Tragédias na Cena</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+              A dupla <span class="text-emerald-400 font-semibold">Yomil y El Dany</span> cria o <i>TrapTon</i>, misturando trap com reggaeton cubano. O falecimento repentino de <b>El Dany (2020)</b> abala o país. Paralelamente, <b>El Taiger</b> e <b>Jacob Forever</b> expandem a sonoridade internacionalmente a partir de Miami.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="bg-gray-800 px-2.5 py-1 rounded-full text-emerald-300">Destaque: Yomil y El Dany, El Taiger, El Micha</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Era 4 -->
+        <div class="relative pl-6 md:pl-8">
+          <div class="absolute -left-2.5 top-1.5 w-5 h-5 rounded-full bg-sky-500 border-4 border-gray-900"></div>
+          <div class="md:absolute md:-left-36 md:top-1 font-black text-sky-400 text-lg">2022 – 2026</div>
+          <div class="glass-card p-5 rounded-xl">
+            <h3 class="text-lg font-bold text-white">Explosão TikTok, Viralidade Global e Romântico Reparto</h3>
+            <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+              Uma nova geração com <span class="text-sky-400 font-semibold">Oniel Bebeshito</span>, <span class="text-sky-400 font-semibold">Mawell</span> ("La Triple M"), <span class="text-sky-400 font-semibold">Charly & Johayron</span>, <span class="text-sky-400 font-semibold">Wampi</span> e <span class="text-sky-400 font-semibold">Fixty Ordara & Ja Rulay</span> domina o Spotify e redes sociais. O Reparto romântico e urbano ganha força global em discotecas de Miami, Espanha, Itália e América Latina.
+            </p>
+            <div class="mt-3 flex flex-wrap gap-2 text-xs">
+              <span class="bg-gray-800 px-2.5 py-1 rounded-full text-sky-300">Hits Atuais: Marca Mandarina, La Triple M, Mi Nombre, Que Clase Pinta</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Special Analysis (Highlight Peak Artists & Status) -->
+  <section id="highlights" class="py-12 bg-gray-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-black text-white">
+          <i class="fa-solid fa-chart-line text-rose-500 mr-2"></i> Destaques de Pico & Mudanças de Status
+        </h2>
+        <p class="text-gray-400 text-sm mt-1">Quem dominou os anos mais importantes e quem diminuiu ou teve sua trajetória interrompida</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Most Outstanding overall -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-amber-400">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-amber-400/20 text-amber-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-crown text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">O Ano Mais Destacado (Pico Global)</h3>
+              <p class="text-xs text-amber-400 font-medium">Oniel Bebeshito (2023 - 2026)</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Nenhum artista do reparto contemporâneo alcançou um nível de dominância tão contínuo recentemente quanto <b>Oniel Bebeshito</b>. Com sucessos massivos como <i>"Marca Mandarina"</i> (com El Taiger) e múltiplos concertos esgotados, tornou-se o autêntico "Rei do Reparto da Nova Era".
+          </p>
+        </div>
+
+        <!-- Pioneer of Reparto -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-rose-500">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-record-vinyl text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Pioneiro Indiscutível</h3>
+              <p class="text-xs text-rose-400 font-medium">Chocolate MC ("El Rey del Reparto")</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Mesmo envolvido em intensas polêmicas judiciais e altos/baixos na carreira, <b>Chocolate MC</b> foi quem inventou a fórmula rítmica do Reparto moderno em 2010–2015. Ele deu o nome e o balanço que hoje todo mundo dança.
+          </p>
+        </div>
+
+        <!-- Less Listened Today / Interrupted Career -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-gray-500">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-gray-700 text-gray-300 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-pause text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Perda de Espaço / Fora de Foco</h3>
+              <p class="text-xs text-gray-400 font-medium">Osmani García / Baby Lores / Insurrecto</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Pioneiros do Cubatón dos anos 2006-2012 como <b>Osmani García</b> (famoso por "El Taxi") ou antigos membros do Clan 537 hoje **não são mais tão escutados** entre a juventude cubana, que migrou quase 100% para o som cru do Reparto de periferia.
+          </p>
+        </div>
+
+        <!-- Memory tribute: El Taiger -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-purple-500 md:col-span-2 lg:col-span-1">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-heart text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Eternos no Coração Cubano</h3>
+              <p class="text-xs text-purple-400 font-medium">El Taiger (1987-2024) & El Dany (1999-2020)</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Tragicamente falecidos, <b>El Dany</b> (em 2020) e <b>El Taiger</b> (em 2024) marcaram gerações. El Taiger deixou um vácuo imenso como a voz mais versátil que conectou Cuba e a diáspora em Miami com hinos inesquecíveis.
+          </p>
+        </div>
+
+        <!-- Global Virality -->
+        <div class="glass-card p-6 rounded-2xl border-l-4 border-sky-400 md:col-span-2 lg:col-span-2">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-10 h-10 rounded-full bg-sky-400/20 text-sky-400 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-globe text-lg"></i>
+            </div>
+            <div>
+              <h3 class="text-base font-bold text-white">Como o Reparto é Reconhecido Mundialmente</h3>
+              <p class="text-xs text-sky-400 font-medium">De Havana para os tops Globais de TikTok e Spotify</p>
+            </div>
+          </div>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Anteriormente chamado de "o reggaeton dos pobres" em Cuba, o Reparto é hoje reconhecido mundialmente pela sua síncopa única de percussão Afro-Cubana (clave de rumba com palmas digitais e bumbo timbero). É dançado mundialmente com o famoso passo "Guachineo" e atrai turnês lotadas pela Europa (Espanha, Itália, França) e Estados Unidos.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Full Artist Details -->
+  <div id="artist-modal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden">
+    <div class="glass-card bg-gray-900 rounded-2xl max-w-xl w-full p-6 relative max-h-[90vh] overflow-y-auto custom-scrollbar">
+      <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-800 text-gray-400 hover:text-white flex items-center justify-center">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="modal-content">
+        <!-- JS filled -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-950 border-t border-gray-800 py-8 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-4">
+      <p class="mb-2">Cuban Reparto & Reggaeton Music Portal • Movimento Contemporâneo (2006–2026)</p>
+      <p class="text-gray-600">Desenvolvido para preservação e consulta da cultura urbana de Cuba.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Complete Database of Contemporary Cuban Reparto & Reggaeton Artists (2006-2026)
+    // Ordered by Age ascending (Youngest to Oldest)
+    const artistsData = [
+      {
+        id: "wampi",
+        name: "Wampi",
+        fullName: "Dasiel Mustelier Oruña",
+        age: 23,
+        birthYear: 2003,
+        location: "Cuba / Miami (EUA)",
+        countryFlag: "🇺🇸 🇨🇺",
+        style: "Reparto",
+        status: "Ativo / Em Alta Viral",
+        hitYear: "2022 - 2026",
+        recognition: "Reconhecido por sua formação musical acadêmica e voz melódica única, fundindo reparto com instrumentação clássica e ritmo frenético.",
+        popularSongs: ["Por Ustedes (Pornosotros 2)", "Tienes Que Nacer de Nuevo", "Llegué Yo", "La Diferencia"],
+        description: "Um dos cantores mais jovens e talentosos do Reparto. Vindo do conservatório, trouxe um refinamento vocal inédito para as batidas de rua cubanas.",
+        photoEmoji: "🎤"
+      },
+      {
+        id: "bebeshito",
+        name: "Oniel Bebeshito",
+        fullName: "Oniel Ernesto Columbié Campos",
+        age: 28,
+        birthYear: 1998,
+        location: "Miami (EUA) / Cuba",
+        countryFlag: "🇺🇸 🇨🇺",
+        style: "Reparto",
+        status: "👑 O Mais Destacado Atualmente",
+        hitYear: "2023 - 2026",
+        recognition: "Considerado o novo Rei do Reparto. Suas músicas acumulam centenas de milhões de reproduções no TikTok e Spotify no mundo todo.",
+        popularSongs: ["Marca Mandarina (com El Taiger)", "Hentai", "Llegó El Loco", "Que Clase Pinta", "El Punto"],
+        description: "O artista de reparto mais escutado e destacado do momento atual. Lota estádios e discotecas em Havana, Miami e Europa com refrões extremamente chiclete.",
+        photoEmoji: "🔥"
+      },
+      {
+        id: "ja-rulay",
+        name: "Ja Rulay",
+        fullName: "Ja Rulay",
+        age: 26,
+        birthYear: 2000,
+        location: "Cuba",
+        countryFlag: "🇨🇺",
+        style: "Reparto",
+        status: "Ativo em Alta",
+        hitYear: "2022 - 2026",
+        recognition: "Conhecido por sua energia explosiva de rua e por ter formado com Fixty Ordara uma das duplas mais influentes da juventude cubana.",
+        popularSongs: ["Por Ustedes", "Mátame", "Agua Noche", "La Partida"],
+        description: "Expoente máximo do Reparto de rua mais cru. Mantém apresentações massivas em Cuba e turnês internacionais.",
+        photoEmoji: "⚡"
+      },
+      {
+        id: "charly-johayron",
+        name: "Charly & Johayron",
+        fullName: "Carlos Coronado & Johayron Amores",
+        age: 27,
+        birthYear: 1999,
+        location: "Miami (EUA) / Cuba",
+        countryFlag: "🇺🇸 🇨🇺",
+        style: "Reparto",
+        status: "Ativo / Top de Vendas",
+        hitYear: "2022 - 2026",
+        recognition: "Líderes do 'Reparto Romântico'. Alcançaram posições altas nas paradas digitais da Billboard Latin Digital Sales.",
+        popularSongs: ["El Punto", "Mi Nombre", "Montaña Rusa", "Una Copia de Ciento"],
+        description: "Reinventaram o reparto tornando-o romântico e melódico, sendo os favoritos das listas de sucessos em discotecas da América Latina e Espanha.",
+        photoEmoji: "💎"
+      },
+      {
+        id: "mawell",
+        name: "Mawell",
+        fullName: "Mawell",
+        age: 29,
+        birthYear: 1997,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reparto",
+        status: "Ativo / Hit Mundial",
+        hitYear: "2023 - 2025",
+        recognition: "Autor do mega hit global 'La Triple M', que se tornou um dos maiores fenômenos virais do TikTok no mundo em 2023-2024.",
+        popularSongs: ["La Triple M", "Ratata", "El Ganador", "Zorra"],
+        description: "Responsável por colocar o reparto no mapa de países onde o gênero não costumava chegar, graças à viralidade digital global.",
+        photoEmoji: "🚀"
+      },
+      {
+        id: "chocolate-mc",
+        name: "Chocolate MC",
+        fullName: "Yosvanis Arismin Sierra Hernández",
+        age: 35,
+        birthYear: 1991,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reparto",
+        status: "Pioneiro / Ativo e Polêmico",
+        hitYear: "2015 - 2020 (Criador)",
+        recognition: "Autoproclamado e amplamente reconhecido como 'El Rey del Reparto'. Criador do ritmo e da dança 'El Guachineo'.",
+        popularSongs: ["Guachineo", "Bajanda", "El Palón Divino", "A Veces (com Lenier)"],
+        description: "Figura central e histórica. Sem ele o reparto não existiria como gênero. Apesar de problemas legais frequentes nos EUA, seu legado é gigantesco.",
+        photoEmoji: "👑"
+      },
+      {
+        id: "el-chulo",
+        name: "El Chulo",
+        fullName: "Abel Díaz Rodríguez",
+        age: 36,
+        birthYear: 1990,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reparto",
+        status: "Ativo",
+        hitYear: "2018 - 2025",
+        recognition: "Conhecido como 'El Presidente del Reparto'. Sólida carreira internacional em Miami com dezenas de certificações de ouro e platina.",
+        popularSongs: ["Que Noche Tan Bonita", "Te Estoy Mirando", "La Diabla", "Acomódate"],
+        description: "Consolidou sua carreira nos Estados Unidos, mantendo-se sempre relevante com colaborações de alto nível com reggaetoneros de todo o Caribe.",
+        photoEmoji: "🏆"
+      },
+      {
+        id: "el-taiger",
+        name: "El Taiger",
+        fullName: "José Manuel Carbajal Zaldívar",
+        age: 37, // Teria 37
+        birthYear: 1987,
+        location: "Eterno (Faleceu em Miami, 2024)",
+        countryFlag: "🕊️ 🇺🇸 🇨🇺",
+        style: "Reggaeton/Cubatón",
+        status: "✝️ Lenda / In Memorian (2024)",
+        hitYear: "2006 - 2024 (Pico Constante)",
+        recognition: "Uma das maiores lendas urbanas de Cuba. Começou no grupo Los 4 e virou ícone do estilo 'Fashaton' e reparto urbano mundial.",
+        popularSongs: ["La Historia", "Marca Mandarina", "Habla Matador", "El Punto", "El Motorola"],
+        description: "Seu falecimento trágico em outubro de 2024 comoveu milhões de cubanos no mundo inteiro. Suas músicas permanecem nos primeiros lugares e são hinos eternos.",
+        photoEmoji: "🕊️"
+      },
+      {
+        id: "yomil-el-dany",
+        name: "Yomil y El Dany",
+        fullName: "Yomil Hidalgo & Roberto Hidalgo (El Dany)",
+        age: 35, // Yomil (35), El Dany (faleceu aos 31 em 2020)
+        birthYear: 1991,
+        location: "Cuba / Em Memória",
+        countryFlag: "🇨🇺 🕊️",
+        style: "Reggaeton/Cubatón",
+        status: "Histórico / Yomil Solo",
+        hitYear: "2015 - 2020",
+        recognition: "Criadores do subgênero 'TrapTon'. Transformaram a indústria musical cubana independente com produção de nível internacional.",
+        popularSongs: ["Tengo", "Como Te Descargo", "Échame Agua", "Amanece", "Dura Magaly"],
+        description: "Marcaram um antes e um depois. O falecimento de El Dany em 2020 interrompeu uma das duplas mais bem-sucedidas do Caribe.",
+        photoEmoji: "⭐"
+      },
+      {
+        id: "el-chacal",
+        name: "El Chacal",
+        fullName: "Ramón Lavado Martínez",
+        age: 40,
+        birthYear: 1986,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reggaeton/Cubatón",
+        status: "Pioneiro Ativo",
+        hitYear: "2007 - 2018",
+        recognition: "Considerado 'El Demonio de la Fama'. Uma das vozes fundadoras do movimento Cubatón junto com Clan 537 e Jacob Forever.",
+        popularSongs: ["Bésame (com Lenier)", "Mi Corazón", "Ay Mi Dios", "Culpable de Qué"],
+        description: "Com uma das vozes mais potentes e versáteis da música urbana cubana, transita com facilidade entre o reggaeton, a bachata e a música romântica.",
+        photoEmoji: "🎤"
+      },
+      {
+        id: "jacob-forever",
+        name: "Jacob Forever",
+        fullName: "Yosdani Jacob Carmenates",
+        age: 45,
+        birthYear: 1981,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reggaeton/Cubatón",
+        status: "Ativo / Veterano",
+        hitYear: "2015 - 2018 (Pico Solo)",
+        recognition: "Indicado ao Latin Grammy. Ex-integrante do Gente de Zona e autor do clássico internacional 'Hasta Que Se Seque El Malecón'.",
+        popularSongs: ["Hasta Que Se Seque El Malecón", "Quiéreme", "La Dura", "Más Rico Mañana"],
+        description: "Um dos cantores urbanos cubanos com maior projeção internacional e vendas nos EUA durante a década de 2010.",
+        photoEmoji: "🌟"
+      },
+      {
+        id: "el-micha",
+        name: "El Micha",
+        fullName: "Michael Sierra Miranda",
+        age: 44,
+        birthYear: 1981,
+        location: "Miami (EUA) / Cuba",
+        countryFlag: "🇺🇸 🇨🇺",
+        style: "Reggaeton/Cubatón",
+        status: "Pioneiro Ativo",
+        hitYear: "2008 - 2020",
+        recognition: "Famoso por sua voz grave inconfundível. Colaborou com estrelas mundiais como Pitbull, Farruko e Enrique Iglesias.",
+        popularSongs: ["Con La Fe", "Un Sueño", "Mala Mía", "Quiero Que Se Enteren"],
+        description: "Membro fundamental da transição do reggaeton de rua cubano para palcos globais e grandes gravadoras.",
+        photoEmoji: "🦁"
+      },
+      {
+        id: "diosa-cuba",
+        name: "La Diosa de Cuba",
+        fullName: "Dianelys Alfonso Cartaya",
+        age: 45,
+        birthYear: 1980,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reggaeton/Cubatón",
+        status: "Ativa",
+        hitYear: "2019 - 2025",
+        recognition: "A principal voz feminina a enfrentar o ambiente predominantemente masculino do reggaeton e reparto cubano.",
+        popularSongs: ["Las 40 Libras", "Por Cantar La Verdad", "La Falsa de Tu Amiga"],
+        description: "Conhecida por sua personalidade forte, letras sem censura e vocal poderoso.",
+        photoEmoji: "👑"
+      },
+      {
+        id: "osmani-garcia",
+        name: "Osmani García",
+        fullName: "Osmani García 'El Voz'",
+        age: 45,
+        birthYear: 1981,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reggaeton/Cubatón",
+        status: "Menos Escutado Atualmente",
+        hitYear: "2011 - 2015 (Pico Hit)",
+        recognition: "Dono do hit estrondoso 'El Taxi' (com Pitbull), que bateu recordes globais de reproduções em 2014-2015.",
+        popularSongs: ["El Taxi", "La Confianza", "Chupi Chupi", "Bailando"],
+        description: "Atingiu o topo absoluto das rádios do mundo em 2015. Atualmente tem menor impacto na nova geração de ouvintes cubanos focada em reparto.",
+        photoEmoji: "🚖"
+      },
+      {
+        id: "gente-de-zona",
+        name: "Gente de Zona",
+        fullName: "Alexander Delgado & Randy Malcom",
+        age: 46, // Alexander (46)
+        birthYear: 1979,
+        location: "Miami (EUA)",
+        countryFlag: "🇺🇸",
+        style: "Reggaeton/Cubatón",
+        status: "Lendas Mundiais / Ativos",
+        hitYear: "2006 - 2021 (Global)",
+        recognition: "Os embaixadores número 1 da música urbana cubana no mundo. Múltiplos vencedores do Latin Grammy e criadores do sucesso 'La Gozadera'.",
+        popularSongs: ["La Gozadera (com Marc Anthony)", "Bailando (com Enrique Iglesias)", "Traidora", "Patria y Vida"],
+        description: "Transcendiveram o reggaeton cubano para o pop latino global. Encheram arenas como o Kaseya Center em Miami.",
+        photoEmoji: "🏆"
+      }
+    ];
+
+    // Render Artists
+    function renderArtists(data) {
+      const container = document.getElementById('artists-grid');
+      container.innerHTML = '';
+
+      if (data.length === 0) {
+        container.innerHTML = `<div class="col-span-full text-center py-12 text-gray-500">Nenhum artista encontrado com estes filtros.</div>`;
+        return;
+      }
+
+      data.forEach(artist => {
+        const card = document.createElement('div');
+        card.className = 'glass-card rounded-2xl p-5 flex flex-col justify-between relative overflow-hidden group';
+
+        card.innerHTML = `
+          <div>
+            <!-- Top Tag & Country -->
+            <div class="flex justify-between items-start mb-3">
+              <span class="text-3xl p-2 rounded-xl bg-gray-800/80 border border-gray-700">${artist.photoEmoji}</span>
+              <div class="text-right">
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700 text-gray-300">
+                  ${artist.countryFlag} ${artist.location}
+                </span>
+              </div>
+            </div>
+
+            <!-- Name & Age -->
+            <h3 class="text-xl font-extrabold text-white group-hover:text-rose-400 transition flex items-center gap-2">
+              ${artist.name}
+            </h3>
+            <p class="text-xs text-gray-400 font-medium">${artist.fullName}</p>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-1.5 my-3">
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold rounded bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                Idade: ${artist.age} anos
+              </span>
+              <span class="px-2 py-0.5 text-[10px] uppercase font-bold rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                ${artist.style}
+              </span>
+            </div>
+
+            <p class="text-xs text-gray-300 line-clamp-3 mb-4 leading-relaxed">
+              ${artist.recognition}
+            </p>
+          </div>
+
+          <div>
+            <!-- Popular songs teaser -->
+            <div class="bg-gray-900/80 p-3 rounded-xl border border-gray-800 mb-4">
+              <div class="text-[11px] font-bold text-gray-400 uppercase mb-1 flex items-center gap-1">
+                <i class="fa-solid fa-music text-rose-500"></i> Músicas em Destaque:
+              </div>
+              <div class="text-xs text-amber-200 font-medium truncate">
+                ${artist.popularSongs.slice(0, 2).join(' • ')}
+              </div>
+            </div>
+
+            <button onclick="openModal('${artist.id}')" class="w-full py-2 bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-500 hover:to-amber-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-rose-600/20 flex items-center justify-center gap-2">
+              Ver Biografia e Sucessos <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      document.getElementById('total-artists-count').innerText = `${data.length}`;
+    }
+
+    // Filter Logic
+    function filterArtists() {
+      const search = document.getElementById('search-input').value.toLowerCase();
+      const location = document.getElementById('location-filter').value;
+      const genre = document.getElementById('genre-filter').value;
+
+      const filtered = artistsData.filter(artist => {
+        const matchesSearch = artist.name.toLowerCase().includes(search) || 
+                              artist.fullName.toLowerCase().includes(search) ||
+                              artist.popularSongs.some(s => s.toLowerCase().includes(search));
+
+        const matchesLocation = location === 'all' || artist.location.includes(location);
+        const matchesGenre = genre === 'all' || artist.style.includes(genre);
+
+        return matchesSearch && matchesLocation && matchesGenre;
+      });
+
+      renderArtists(filtered);
+    }
+
+    // Modal Details
+    function openModal(id) {
+      const artist = artistsData.find(a => a.id === id);
+      if (!artist) return;
+
+      const modalContent = document.getElementById('modal-content');
+      modalContent.innerHTML = `
+        <div class="text-center mb-6">
+          <div class="text-5xl mb-2">${artist.photoEmoji}</div>
+          <h2 class="text-2xl font-black text-white">${artist.name}</h2>
+          <p class="text-xs text-gray-400">${artist.fullName} • ${artist.age} anos (Nascido em ~${artist.birthYear})</p>
+          <div class="mt-2 inline-block px-3 py-1 rounded-full bg-gray-800 text-amber-400 text-xs font-bold">
+            📍 Localização: ${artist.countryFlag} ${artist.location}
+          </div>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-gray-300">
+          <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-700">
+            <h4 class="font-bold text-white mb-1 text-xs uppercase tracking-wider text-rose-400">Status & Época de Pico:</h4>
+            <p>${artist.status} (Anos de Ouro: ${artist.hitYear})</p>
+          </div>
+
+          <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-700">
+            <h4 class="font-bold text-white mb-1 text-xs uppercase tracking-wider text-amber-400">Reconhecimento Internacional:</h4>
+            <p class="leading-relaxed">${artist.recognition}</p>
+          </div>
+
+          <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-700">
+            <h4 class="font-bold text-white mb-1 text-xs uppercase tracking-wider text-emerald-400">Histórico no Movimento:</h4>
+            <p class="leading-relaxed">${artist.description}</p>
+          </div>
+
+          <div class="bg-gray-800/60 p-4 rounded-xl border border-gray-700">
+            <h4 class="font-bold text-white mb-2 text-xs uppercase tracking-wider text-sky-400">Principais Músicas Escutadas no Mundo:</h4>
+            <ul class="list-disc list-inside space-y-1 font-medium text-gray-200">
+              ${artist.popularSongs.map(song => `<li>${song}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+      `;
+
+      document.getElementById('artist-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('artist-modal').classList.add('hidden');
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Initial Load
+    window.onload = () => {
+      // Sort artists by age ascending by default
+      artistsData.sort((a, b) => a.age - b.age);
+      renderArtists(artistsData);
+    };
+  </script>
+</body>
+</html>
