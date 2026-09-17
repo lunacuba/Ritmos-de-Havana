@@ -27,3 +27,29 @@
     color: aqua;
     font-size: 16px;
 }
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+thead th {
+    background-color: #f170a6;
+    color: bisque;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #e79191;
+}
+
+tr:hover {
+    background-color: #eea8e2;
+}
+
