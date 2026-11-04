@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cadastro</h2>
+    <div class="form-grupo">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" class="campo" placeholder="Digite o nome">
+        <button id="btn-add" class="btn">Adicionar</button>
+    </div>
+       <table class="tabela">
+     <thead>
+        <tr>
+             <th>Nome</th>
+         </tr>
+     </thead>
+     <tbody id="lista">
+
+         </tbody>
+        </table>
+
+        <script>
+            const campoNome = document.getElementById("nome");
+            const btnAdd = document.getElementById("btn-add");
+            const lista = document.getElementById("lista");
+
+            btnAdd.addEventListener("click", () => {
+            const valor = campoNome.value.trim();
+
+            if (valor !== "") {
+                // Cria uma nova linha na tabela
+                const linha = document.createElement("tr");
+                const coluna = document.createElement("td");
+               
+                coluna.textContent = valor;
+                linha.appendChild(coluna);
+                lista.appendChild(linha);
+
+                // Limpa o campo e foca nele novamente
+                campoNome.value = "";
+                campoNome.focus();
+            } else {
+                alert("Por favor, digite um nome!");
+            }
+        });
+    </script>
+        
+    
+     
+        
+    
+</body>
+</html>
